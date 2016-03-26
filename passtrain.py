@@ -7,8 +7,10 @@ import os
 def attempt_submission(true_passphrase):
    guessed_passphrase = getpass.getpass("Enter your passphrase: ")
    if guessed_passphrase == true_passphrase:
+      print('[*] Yep!')
       return True
    else:
+      print('[!] Nope...')
       return False
 
 
@@ -27,5 +29,7 @@ if __name__=='__main__':
    while num_success < args.num_consec:
        if attempt_submission(args.passphrase):
            num_success += 1
+       else:
+           num_success = 0
    print("[*] Looks like you've got it! Exiting.")
    time.sleep(1) 
