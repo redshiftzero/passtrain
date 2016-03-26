@@ -16,10 +16,11 @@ def attempt_submission(true_passphrase):
 
 if __name__=='__main__':
    parser = argparse.ArgumentParser()
-   parser.add_argument("passphrase", type=str, help="passphrase to remember")
    parser.add_argument("-n", "--num_consec", dest="num_consec", type=int, default="10", 
                        help="number of consecutive successes before exit")
    args = parser.parse_args()
+
+   passphrase = input("Enter passphrase to remember: ")
 
    # Clear terminal so no cheating ;)  
    os.system('cls' if os.name == 'nt' else 'clear')
@@ -27,7 +28,7 @@ if __name__=='__main__':
    num_success = 0
    print("PASSTRAIN: Upload your passphrase into your brain")
    while num_success < args.num_consec:
-       if attempt_submission(args.passphrase):
+       if attempt_submission(passphrase):
            num_success += 1
        else:
            num_success = 0

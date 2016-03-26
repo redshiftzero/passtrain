@@ -6,8 +6,8 @@ upload data into your neural secure enclave
 
 To learn a passphrase:
 
-```python passtrain.py thisismysecurepassphrase```
+```python passtrain.py```
 
 To specify the number of consecutive successful attempts before the script exits:
 
-```python passtrain.py -n 10 thisismysecurepassphrase```
+```python passtrain.py -n 10```
