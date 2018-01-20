@@ -20,7 +20,7 @@ if __name__=='__main__':
                        help="number of consecutive successes before exit")
    args = parser.parse_args()
 
-   passphrase = input("Enter passphrase to remember: ")
+   passphrase = getpass.getpass("Enter passphrase to remember: ")
 
    # Clear terminal so no cheating ;)  
    os.system('cls' if os.name == 'nt' else 'clear')
